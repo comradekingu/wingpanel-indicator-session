@@ -190,7 +190,7 @@ public class Session.Indicator : Wingpanel.Indicator {
                 try {
                     AppInfo.launch_default_for_uri ("settings://accounts", null);
                 } catch (Error e) {
-                    warning ("Failed to open user accounts settings: %s", e.message);
+                    warning ("Could not open the user account settings: %s", e.message);
                 }
             });
 
@@ -371,7 +371,7 @@ public class Session.Indicator : Wingpanel.Indicator {
             description = _("Not logged in");
         }
 
-        string accel_label = Granite.TOOLTIP_SECONDARY_TEXT_MARKUP.printf (_("Middle-click to prompt to shut down"));
+        string accel_label = Granite.TOOLTIP_SECONDARY_TEXT_MARKUP.printf (_("Middle-click to initiate shutdown"));
 
         indicator_icon.tooltip_markup = "%s\n%s".printf (
             description,
